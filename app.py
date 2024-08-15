@@ -17,14 +17,14 @@ file = st.file_uploader('Rasmni yuklash',
                          'jpeg', 
                          'svg'])
 
-if file:
-    st.image(file)
-    img = PILImage.create(file)
-    
-    model = load_learner('transport_model.pkl')
-    prediction, prob_id, probs = model.predict(img)
-    st.success(f'Bashorat: {prediction}')
-    st.info(f'Ehtimollik: {probs[prob_id]*100:.1f} %')
-    
-    fig = px.bar(x = probs*100, y = model.dls.vocab)
-    st.plotly_chart(fig)
+#if file:
+#    st.image(file)
+#    img = PILImage.create(file)
+#    
+#    model = load_learner('transport_model.pkl')
+#    prediction, prob_id, probs = model.predict(img)
+#    st.success(f'Bashorat: {prediction}')
+#    st.info(f'Ehtimollik: {probs[prob_id]*100:.1f} %')
+#    
+#    fig = px.bar(x = probs*100, y = model.dls.vocab)
+#    st.plotly_chart(fig)
